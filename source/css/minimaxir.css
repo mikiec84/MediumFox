@@ -3,7 +3,7 @@ font-family: 'Source Sans Pro', sans-serif;
 }
 
 article img {
-width: 100%;
+max-width: 100%;
 }
 
 blockquote {
@@ -32,7 +32,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c3e50', end
 }
 
 .hero {
-background: url("/images/my_charts_hero_small.png");
+background: url("/images/my_charts_hero_small.jpg");
 -webkit-animation:bgscroll 50s infinite linear;
 animation:bgscroll 50s infinite linear;
 text-shadow: 0px 0px 30px rgba(0,0,0,0.5)
@@ -55,4 +55,30 @@ border-bottom: 1px solid #1863a1;
 .full-single-article a:hover {
 color: #1863a1;
 text-decoration: none;
+}
+
+.her-row  #about-me {
+margin-bottom: 10px;
+line-height: 2.0;
+}
+
+
+.embed-video-container {
+    position: relative;
+    padding-bottom: 50%; /* 16/9 ratio */
+    padding-top: 30px; /* IE6 workaround*/
+    height: 0;
+    overflow: hidden;
+	width: 100%;
+	min-height: 200px;
+}
+
+.embed-video-container iframe,
+.embed-video-container object,
+.embed-video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
