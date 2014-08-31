@@ -84,13 +84,14 @@ line-height: 2.0;
 }
 
 .social-icon-list a {
-font-size: 4em;
+font-size: 3em;
 margin-right: 10px;
 color: #666665;
 }
 
-.social-icon-list a:hover {
+.social-icon-list a:hover, .social a:hover {
 color: #333;
+text-decoration: none;
 }
 
 #footer .social-icon-list a {
@@ -103,4 +104,18 @@ margin: -20px 0px;
 
 .home-field #about-me .social-icon-list {
 margin-top: 0px;
+}
+
+.count {
+margin-left: 20px;
+}
+
+.social a {
+	font-size: 2em;
+	color: #666665;
+}
+
+.full-single-article .social a{
+font-size: 3em;
+border: none;
 }

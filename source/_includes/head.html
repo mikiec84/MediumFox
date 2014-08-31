@@ -21,12 +21,49 @@
   <link href="{{ root_url }}/favicon.png" rel="icon">
   <link href="{{ root_url }}/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="{{ root_url }}/css/minimaxir.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="{{ root_url }}/css/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="{{ site.subscribe_rss }}" rel="alternate" title="{{site.title}}" type="application/atom+xml">
   <script src="{{ root_url }}/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="{{ root_url }}/javascripts/octopress.js" type="text/javascript"></script>
-  {% include google_analytics.html %}
+  
+  <script>
+   $(document).ready(function() {
+ 
+  // Facebook
+	$( ".social.facebook" ).children().each(function(index,value) {
+	var facebook_button = $(this);
+	var url = facebook_button.attr("data");
+
+  jQuery.getJSON("http://graph.facebook.com/?id="+url, function(data) {
+  if (typeof data.shares != 'undefined') facebook_button.html("<i class=\"fa fa-facebook\"></i><span class=\"count hidden-xs\"> " + data.shares + "</span>");
+  else if (typeof data.likes != 'undefined') facebook_button.html("<i class=\"fa fa-facebook\"></i><span class=\"count hidden-xs\"> " + data.likes + "</span>");
+  else facebook_button.html("<i class=\"fa fa-facebook\"></i><span class=\"count hidden-xs\"> " + " 0</span>");
+  });
+  });
+ 
+ // Twitter
+	$( ".social.twitter" ).children().each(function(index,value) {
+	var twitter_button = $(this);
+	var url = twitter_button.attr("data");
+
+  jQuery.getJSON("http://urls.api.twitter.com/1/urls/count.json?url="+url+"&callback=?", function(data) {
+  twitter_button.html("<i class=\"fa fa-twitter\"></i><span class=\"count hidden-xs\"> " + data.count + "</span>");
+  });
+  });
+  
+  // LinkedIn
+	$( ".social.linkedin" ).children().each(function(index,value) {
+	var linkedin_button = $(this);
+	var url = linkedin_button.attr("data");
+
+  jQuery.getJSON("http://www.linkedin.com/countserv/count/share?url="+url+"&format=jsonp&callback=?", function(data) {
+  linkedin_button.html("<i class=\"fa fa-linkedin\"></i><span class=\"count hidden-xs\"> " + data.count + "</span>");
+  });
+  });
+  });
+  </script>
+
 </head>
