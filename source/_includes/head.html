@@ -86,7 +86,7 @@
   <link href="{{ root_url }}/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="{{ root_url }}/css/minimaxir.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="{{ root_url }}/css/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,700' rel='stylesheet' type='text/css'>
   <link href="{{ site.subscribe_rss }}" rel="alternate" title="{{site.title}}" type="application/atom+xml">
   <script src="{{ root_url }}/javascripts/modernizr-2.0.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -113,7 +113,7 @@
 	var twitter_button = $(this);
 	var url = twitter_button.attr("data");
 
-  jQuery.getJSON("http://urls.api.twitter.com/1/urls/count.json?url="+url+"&callback=?", function(data) {
+  jQuery.getJSON("http://cdn.api.twitter.com/1/urls/count.json?url="+url+"&callback=?", function(data) {
   twitter_button.html("<i class=\"fa fa-twitter\"></i><span class=\"count hidden-xs\"> " + data.count + "</span>");
   });
   });
